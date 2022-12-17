@@ -41,5 +41,18 @@ module.exports = {
             about: Joi.string().required()
         })
     },
-    avatar: Joi.binary()
+    project: {
+        name: Joi.string().required(),
+        about: Joi.string().required(),
+        until: Joi.date().required(),
+        category: Joi.string().required(),
+        budget: Joi.string().required(),
+    },
+    bid: {
+        project: Joi.string().required(),
+        text: Joi.string().required(),
+        duration: Joi.string().required(),
+        price: Joi.string().required()
+    },
+    file: Joi.binary()
 }

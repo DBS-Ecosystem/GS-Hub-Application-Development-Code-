@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const User = require('./models/User');
 
 module.exports = function(req, res, next) {
     const token = req.header('auth-token');
@@ -7,6 +8,7 @@ module.exports = function(req, res, next) {
     try{
         const verified = jwt.verify(token, process.env.TOKEN_SECRET);
         req.user = verified;
+        User.updateOne({_id: req.user._id}, {$set: {lastvisit: Date.now()}});
         next();
     } catch(err) {
         res.status(400).send('Invalid Token')
