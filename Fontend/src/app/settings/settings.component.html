@@ -1,0 +1,36 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side">
+        <app-nav></app-nav>
+    </mat-sidenav>
+    <mat-sidenav-content (dblclick)="sidenav.toggle()" class="content">
+        <div>
+            <form>  
+                <div class="form-field">
+                    <label for="newlogin">Change login</label>
+                    <mat-form-field appearance="fill">
+                        <mat-label>New Login</mat-label>
+                        <input type="text" id="newlogin" matInput placeholder="ex. Nickname">
+                    </mat-form-field>
+                </div>
+                <div class="form-field">
+                    <label>Change password</label>
+                    <mat-form-field appearance="fill">
+                        <mat-label>New password</mat-label>
+                        <input type="text" matInput placeholder="ex. Qwerty9384">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Confirm password</mat-label>
+                        <input type="text" matInput placeholder="ex. Qwerty9384">
+                    </mat-form-field>
+                </div>
+                <button type='button' class="main_button">Submit</button>
+            </form>
+            <div>
+                <a href="">Logout from all devices</a>
+            </div>
+            <div>
+                <a href="">Delete profile</a>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

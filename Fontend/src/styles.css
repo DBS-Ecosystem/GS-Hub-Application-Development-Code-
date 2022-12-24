@@ -1,0 +1,133 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --prm-orange: #f8941c;
+    --prm-hv-orange: #ca7b1a;
+    --prm-text: #f8f8f8;
+    --scd-text: #ffffff;
+    --prm-font: "Poppins", sans-serif;
+    --scd-font: "Montserrat", sans-serif;
+}
+
+body { 
+    margin: 0;
+    font-family: var(--prm-font);
+    color: var(--scd-text);
+}
+
+.root {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(120deg, #441c8a, #501c84 10%, #841af2);
+}
+
+.header {
+    display: block;
+    width: 100%;
+    aspect-ratio : 9 / 1;
+}
+
+.news {
+    display: block;
+    width: 100%;
+    aspect-ratio : 3 / 1;
+}
+
+.frame {
+    display: block;
+    width: 100%;
+    padding: 0 2%;
+}
+
+mat-sidenav-container, div.sign {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+}
+
+mat-sidenav, mat-sidenav-container {
+    background-color: transparent !important;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    border: thin solid var(--scd-text);
+    border-radius: 0 !important;
+    padding: 0 !important;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-infix {
+    padding: .5em 0 .6em 1em;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-label {
+    top: 1.5em;
+    left: 1em;
+}
+  
+.mat-form-field-infix {
+    border-top: .6em solid rgba(0,0,0,0);
+}
+  
+.mat-form-field-appearance-fill .mat-form-field-underline::before {
+    background-color: transparent;
+}
+
+.mat-button-toggle-group-appearance-standard, .mat-button-toggle-group {
+    border-radius: 0 !important;
+    border: none;
+}
+  
+.mat-button-toggle-appearance-standard {
+    color: var(--scd-text);;
+    background: transparent;
+}
+  
+.mat-button-toggle-button {
+    border: thin solid var(--scd-text) !important;
+    text-decoration: none;
+}
+
+.content {
+    background-image: url('./assets/background.png');
+    background-size: cover;
+}
+
+.main_button {
+    border: thin solid var(--scd-text);
+    text-decoration: none;
+    font-family: var(--prm-font);
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--scd-text);
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    padding: 0.5rem 2.4rem;
+    position: relative;
+}
+
+.main_button:hover{
+    background-color: #0000004d;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 300;
+}
+
+label {
+    font-family: var(--prm-font);
+    font-weight: 300;
+    color: var(--scd-text);
+}
+
+.footer {
+    display: block;
+    width: 100%;
+    aspect-ratio : 5 / 1;
+}

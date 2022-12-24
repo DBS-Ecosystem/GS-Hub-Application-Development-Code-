@@ -1,0 +1,65 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side">
+        <app-nav></app-nav>
+    </mat-sidenav>
+    <mat-sidenav-content (dblclick)="sidenav.toggle()" class="content">
+        <div>
+            <form method="post" enctype="multipart/form-data">  
+                <div>
+                    <div>
+                        <div>
+                            <div></div>
+                            <span>Current</span>
+                        </div>
+                        <div>
+                            <div></div>
+                            <label for="avatar">Choose</label>
+                            <input type="file" name="until" id="avatar">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Language Proficiency Level</h3>
+                    <select name="language" required>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                    <select name="level" required>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div>
+                    <div class="form-field">
+                        <label for="newemail">E-mail</label>
+                        <mat-form-field appearance="fill">
+                            <input type="email" matInput  id="newemail" placeholder="ex. name@mail.com">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-field">
+                        <label for="newphone">Mobile phone</label>
+                        <mat-form-field appearance="fill">
+                            <input type="tel" matInput  id="newphone" placeholder="ex. +38097258331">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-field">
+                        <label for="web">Website</label>
+                        <mat-form-field appearance="fill">
+                            <input type="url" matInput  id="web" placeholder="ex. domain_name.com">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-field">
+                        <label for="wallet">Payment card</label>
+                        <mat-form-field appearance="fill">
+                            <input type="text" matInput  id="wallet" placeholder="ex. xxxx xxxx">
+                        </mat-form-field>
+                        <span>+add</span>
+                    </div>
+                </div>
+                <button type='button' class="main_button">Submit</button>
+            </form>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

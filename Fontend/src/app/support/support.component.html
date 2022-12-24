@@ -1,0 +1,24 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side">
+        <app-nav></app-nav>
+    </mat-sidenav>
+    <mat-sidenav-content (dblclick)="sidenav.toggle()" class="content">
+        <div>
+            <h2>Send message to support team</h2>
+            <form>  
+                <div class="form-field">
+                    <label for="topic">Topic</label>
+                    <mat-form-field appearance="fill">
+                        <input type="text" id="topic" matInput placeholder="ex. Issue">
+                    </mat-form-field>
+                </div>
+                <div class="form-field">
+                    <mat-form-field appearance="fill">
+                        <textarea name="message" matInput placeholder="Your Message"></textarea>
+                    </mat-form-field>
+                </div>
+                <button type='button' class="main_button">Send message</button>
+            </form>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

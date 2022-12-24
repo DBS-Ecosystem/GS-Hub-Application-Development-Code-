@@ -1,0 +1,102 @@
+<div class="sign content">
+    <form *ngIf="!submitted" [formGroup]="reg2">
+        <div class="section">
+            <h2>Account settings</h2>
+            <div class="form-field">
+                <label for="code">Verify code</label>
+                <mat-form-field appearance="fill">
+                    <input type="text" matInput placeholder="SMS Code">
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <label for="login">Login</label>
+                <mat-form-field appearance="fill">
+                    <input type="text" matInput formControlName="login" id="login" placeholder="ex. Nickname">
+                    <mat-error *ngIf="reg2.controls['login'].hasError('minlength') && !reg2.controls['login'].hasError('required')">
+                        Login must be at least 6 characters long
+                    </mat-error>
+                    <mat-error *ngIf="reg2.controls['login'].hasError('maxlength') && !reg2.controls['login'].hasError('required')">
+                        Login must be not longer than 50 characters
+                    </mat-error>
+                    <mat-error *ngIf="reg2.controls['login'].hasError('required')">
+                        Login is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <label for="password">Password</label>
+                <mat-form-field appearance="fill">
+                    <input type="password" matInput formControlName="password" id="password" placeholder="ex. Qwerty9384">
+                    <mat-error *ngIf="reg2.controls['password'].hasError('minlength') && !reg2.controls['password'].hasError('required')">
+                        Password must be at least 6 characters long
+                    </mat-error>
+                    <mat-error *ngIf="reg2.controls['password'].hasError('required')">
+                        Password is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Personal Information</h2>
+            <div class="form-field">
+                <label for="email">Email</label>
+                <mat-form-field appearance="fill">
+                    <input type="email" matInput formControlName="email" id="email" placeholder="ex. name@mail.com">
+                    <mat-error *ngIf="reg2.controls['email'].hasError('email') && !reg2.controls['email'].hasError('required')">
+                        Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="reg2.controls['email'].hasError('minlength') && !reg2.controls['email'].hasError('required')">
+                        Email must be at least 6 characters long
+                    </mat-error>
+                    <mat-error *ngIf="reg2.controls['email'].hasError('maxlength') && !reg2.controls['email'].hasError('required')">
+                        Email must be not longer than 20 characters
+                    </mat-error>
+                    <mat-error *ngIf="reg2.controls['email'].hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <label for="name">Fist name</label>
+                <mat-form-field appearance="fill">
+                    <input type="text" matInput formControlName="name" id="name" placeholder="Your First Name">
+                    <mat-error *ngIf="reg2.controls['name'].hasError('maxlength') && !reg2.controls['name'].hasError('required')">
+                        Name must be not longer than 20 characters
+                    </mat-error>
+                    <mat-error *ngIf="reg2.controls['name'].hasError('required')">
+                        Name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <label for="surname">Last name</label>
+                <mat-form-field appearance="fill">
+                    <input type="text" matInput formControlName="surname" id="surname" placeholder="Your Last Name">
+                    <mat-error *ngIf="reg2.controls['surname'].hasError('maxlength') && !reg2.controls['surname'].hasError('required')">
+                        Last name must be not longer than 20 characters
+                    </mat-error>
+                    <mat-error *ngIf="reg2.controls['surname'].hasError('required')">
+                        Last name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <label>Place of residence</label>
+                <mat-form-field appearance="fill">
+                    <input type="text" matInput formControlName="country" placeholder="Your Country">
+                    <mat-error *ngIf="reg2.controls['country'].hasError('required')">
+                        Country name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <input type="text" matInput formControlName="city" placeholder="Your City">
+                    <mat-error *ngIf="reg2.controls['city'].hasError('required')">
+                        City name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <button class="main_button" [disabled]="!reg2.valid" (click)="signup(reg2)">Submit</button>
+    </form>
+    <div *ngIf="submitted">{{message}}</div>
+</div>

@@ -1,0 +1,41 @@
+<div mat-dialog-content>
+    <div>
+        <h2>Adding work to portfolio</h2>
+        <form enctype="multipart/form-data">  
+            <div>
+                <div class="form-field">
+                    <input type="text" name="name" id="name" required>
+                </div>
+                <div class="form-field">
+                    <textarea name="about" id="about" cols="30" rows="10"></textarea>
+                </div>
+                <div class="form-field">
+                    <input type="file" name="file" id="file" required>
+                </div>
+            </div>
+            <div>
+                <div class="form-field">
+                    <label for="until">Link</label>
+                    <input type="text" name="until" id="until" required>
+                </div>
+                <div class="form-field">
+                    <label for="category">Category</label>
+                    <select name="category" id="category" required>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="budget">Project budget</label>
+                    <input type="text" name="budget" id="budget" required>
+                    <span>B$K/$</span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Add project</button>
+</div>

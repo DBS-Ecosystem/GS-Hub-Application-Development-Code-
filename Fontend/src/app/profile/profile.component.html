@@ -1,0 +1,32 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side">
+        <app-nav></app-nav>
+    </mat-sidenav>
+    <mat-sidenav-content (dblclick)="sidenav.toggle()" class="content">
+        <div>
+            <form>  
+                <div class="form-field">
+                    <label for="about">About</label>
+                    <mat-form-field appearance="fill">
+                        <textarea id="about" matInput placeholder="General Info"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="form-field">
+                    <button type='button' class="main_button" (click)="openDialog()">Portfolio</button>
+                </div>
+                <div class="form-field">
+                    <label for="category">Primary specialization</label>
+                    <select name="category" id="category" required>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <button type='button' class="main_button">Choose from categories of skills</button>
+                </div>
+                <button type='button' class="main_button">Submit</button>
+            </form>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

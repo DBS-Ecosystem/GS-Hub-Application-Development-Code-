@@ -1,0 +1,13 @@
+<nav>
+    <div class="menu-items">
+        <button *ngIf="user==='SME'" class="menu-item" [routerLink]="['/cabinet']">CABINET</button>
+        <button class="menu-item" [routerLink]="['/conversation']">CONVERSATION</button>
+        <button class="menu-item" [routerLink]="['/bids']">BIDS</button>
+        <button class="menu-item" [routerLink]="['/finances']">FINANCES</button>
+        <div class="spacer"></div>
+        <button class="menu-item" [routerLink]="['/private']">PRIVATE INFO</button>
+        <button class="menu-item" [routerLink]="['/profile']">PROFILE</button>
+        <button class="menu-item" [routerLink]="['/settings']">SETTINGS</button>
+        <button class="menu-item" [routerLink]="['/support']">SUPPORT</button>
+    </div>
+</nav>

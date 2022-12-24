@@ -1,0 +1,66 @@
+<div class="sign content">
+    <div class="reg1">
+        <h2>New profile registration</h2>
+        <form [formGroup]="reg1">
+            <div class="form-field">
+                <h3>Profile type</h3>
+                <mat-button-toggle-group formControlName="type" aria-label="User Type">
+                    <mat-button-toggle value="SPO">SPO</mat-button-toggle>
+                    <div style="width: 2em;"></div>
+                    <mat-button-toggle value="SME">SME</mat-button-toggle>
+                </mat-button-toggle-group>
+                <mat-error *ngIf="reg1.controls['type'].hasError('required') && reg1.controls['phone'].touched">
+                  Please choose your account type
+                </mat-error>
+            </div>
+            <div class="form-field">
+                <label for="phone">Mobile phone</label>
+                <mat-form-field appearance="fill">
+                    <input type="tel" matInput formControlName="phone" id="phone" placeholder="ex. +1 201 555 0123">
+                    <mat-error *ngIf="reg1.controls['phone'].hasError('pattern') && !reg1.controls['phone'].hasError('required')">
+                      Please enter a valid phone number
+                    </mat-error>
+                    <mat-error *ngIf="reg1.controls['phone'].hasError('required')">
+                      Phone number is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <button class="main_button" [disabled]="!reg1.valid" (click)="firstStep(reg1)">Send registration code</button>
+        </form>
+    </div>
+    <div *ngIf="!submitted" class="login">
+        <h2>Log in if you have account</h2>
+        <form [formGroup]="log">
+            <h3>Welcome</h3>
+            <div class="form-field">
+                <label for="login">Login</label>
+                <mat-form-field appearance="fill">
+                    <input type="text" matInput formControlName="login" id="login" placeholder="ex. Nickname">
+                    <mat-error *ngIf="log.controls['login'].hasError('minlength') && !log.controls['login'].hasError('required')">
+                      Login must be at least 6 characters long
+                    </mat-error>
+                    <mat-error *ngIf="log.controls['login'].hasError('maxlength') && !log.controls['login'].hasError('required')">
+                        Login must be not longer than 6 characters
+                      </mat-error>
+                    <mat-error *ngIf="log.controls['login'].hasError('required')">
+                      Login is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <label for="pass">Password</label>
+                <mat-form-field appearance="fill">
+                    <input type="password" matInput formControlName="password" id="pass" placeholder="ex. Qwerty9384">
+                    <mat-error *ngIf="log.controls['password'].hasError('minlength') && !log.controls['password'].hasError('required')">
+                      Password must be at least 6 characters long
+                    </mat-error>
+                    <mat-error *ngIf="log.controls['password'].hasError('required')">
+                      Password is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <button class="main_button" [disabled]="!log.valid" (click)="login(log.value)">Login</button>
+        </form>
+    </div>
+    <div *ngIf="submitted">{{message}}</div>
+</div>

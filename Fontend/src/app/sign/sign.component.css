@@ -1,0 +1,8 @@
+.reg1, .login {
+    height: 50%;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+}
